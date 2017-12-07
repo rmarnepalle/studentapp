@@ -1,17 +1,16 @@
 package com.rcode.demos.model;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Student {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private int marks;
 
-    Student(){}
+    public Student(){}
     public Student(Long id, String name, int marks) {
         this.id = id;
         this.name = name;

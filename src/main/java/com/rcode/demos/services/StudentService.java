@@ -25,4 +25,10 @@ public class StudentService {
         Iterable<Student> allStudents = studentRepository. findAll();
         return allStudents;
     }
+    public Student addNewStudent(Student st){
+        return (Student)studentRepository.save(st);
+    }
+    public void deleteStudent(Long id){
+        studentRepository.delete(this.getStudentById(id));
+    }
 }
